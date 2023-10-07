@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  ipc:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: ipcdb
+    environment:
+      - MSSQL_SA_PASSWORD=ireneGonzalez*
+      - SA_PASSWORD=ireneGonzalez*
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    volumes:
+        - ipc_data:/var/opt/mssql 
+volumes:
+  ipc_data:
