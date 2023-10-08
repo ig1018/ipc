@@ -76,6 +76,8 @@ namespace IPC.API.Controllers
                 return BadRequest(ModelState);
             }
 
+            //Logica de negocio para no agregar categorias repetidas o con nombres invalidos
+
             db.Categorias.Add(categorias);
             await db.SaveChangesAsync();
 
